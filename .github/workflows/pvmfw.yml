@@ -4,14 +4,12 @@ on:
   workflow_dispatch:
     inputs:
       op12Url:
-        description: 'OnePlus12 ROM Url'
+        description: 'OnePlus 12 ROM Url'
         required: true
-        default: "https://gauss-componentotacostmanual-cn.allawnfs.com/remove-dc8f5192915820674b15c7e0743e4af2/component-ota/24/10/25/bff700472c1e41b2876f7a34cea0defe.zip"
         type: string
       op13Url:
-        description: 'OnePlus13 ROM Url'
+        description: 'OnePlus 13 ROM Url'
         required: true
-        default: "https://gauss-componentotacostmanual-cn.allawnfs.com/remove-a57a620f5ee7383a1bbd56775b6d3a40/component-ota/24/10/28/520d183612ae4c579ed10e100e7a0ac8.zip"
         type: string
 
 jobs:
