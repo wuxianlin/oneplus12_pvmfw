@@ -35,6 +35,7 @@ get_args() {
 }
 
 python3 avbtool.py make_vbmeta_image $(get_args $ORIG_IMAGE) \
+    --padding_size 4096 \
     --include_descriptors_from_image op13/pvmfw.img \
     --include_descriptors_from_image op12/product.img \
     --include_descriptors_from_image op12/system.img \
