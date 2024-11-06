@@ -13,10 +13,12 @@ payload_dumper --partitions system,system_ext,product,vbmeta,vbmeta_system,vbmet
 # resign vbmeta_system of oneplus 12 with pvmfw
 bash remake.sh vbmeta_system_mod.img op12/vbmeta_system.img
 
-# mod vendor_boot image oneplus 12
+# mod vendor_boot image of oneplus 12
 mkbootimg_args=`python3 mkbootimg/unpack_bootimg.py --boot_img op12/vendor_boot.img --out unpack --format mkbootimg`
 sed -i 's/androidboot.hypervisor.protected_vm.supported=0/androidboot.hypervisor.protected_vm.supported=true/g' unpack/bootconfig
-python3 mkbootimg/mkbootimg.py --vendor_boot vendor_boot_mod.img $mkbootimg_args
+repack_args='python3 mkbootimg/mkbootimg.py --vendor_boot vendor_boot_mod.img '$mkbootimg_args
+echo $repack_args
+eval $repack_args
 
 # resign modified vendor_boot
 bash resign.sh vendor_boot_mod.img op12/vendor_boot.img
