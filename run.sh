@@ -1,6 +1,6 @@
 #!/bin/bash
 
-git clone https://android.googlesource.com/platform/system/tools/mkbootimg
+git clone --depth 1 https://android.googlesource.com/platform/system/tools/mkbootimg
 
 # unpack images from oneplus 13 rom
 mkdir op13
