@@ -44,7 +44,7 @@ jobs:
         OP13_ROM_URL: ${{ inputs.op13Url }}
 
     - name: Upload build artifact
-      uses: actions/upload-artifact@v3
+      uses: actions/upload-artifact@v4
       with:
         name: output
         path: out/*.img
